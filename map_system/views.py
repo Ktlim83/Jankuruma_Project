@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect , HttpResponse
 from log_reg_app.models import *
 from .models import *
 from django.contrib import messages
+import os
 # THIS IMPORT IS FOR FILE UPLOADS
 from django.core.files.storage import FileSystemStorage
 
@@ -14,5 +15,10 @@ def map_dashboard(request):
     else:
         context = {
             'user': User.objects.get(id=request.session['user_id']),
+            "map_api" : os.environ.get('GMAP2_APIKEY'),
+            
         }
         return render (request, 'map1.html', context)
+    
+    
+    

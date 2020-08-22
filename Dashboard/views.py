@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect , HttpResponse
 from log_reg_app.models import *
 from map_system.models import *
 from .models import *
+import os
 from django.contrib import messages
 # THIS IMPORT IS FOR FILE UPLOADS
 from django.core.files.storage import FileSystemStorage
