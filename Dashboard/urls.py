@@ -6,6 +6,7 @@ urlpatterns = [
     
    path('', views.dashboard, name="dashboard"), 
    path('about', views.about, name="about"), 
+   path('featured_story', views.featured_story, name="featured_story"), 
    path('<int:post_id>/delete', views.delete, name="delete"),
    path('post_message', views.post_mess, name="post_mess"),
    path('add_comment/<int:id>', views.post_comment, name="post_comment"),

@@ -18,6 +18,17 @@ def about(request):
             'user': User.objects.get(id=request.session['user_id']),
         }
         return render (request, 'about.html', context)
+    
+# LOADS ABOUT FEATURED STORY 
+def featured_story(request):
+    # if check checks if there is a user logged in, if not it redirects
+    if 'user_id' not in request.session:
+        return redirect ('/')
+    else:
+        context = {
+            'user': User.objects.get(id=request.session['user_id']),
+        }
+        return render (request, 'featured_story.html', context)
 
 # LOADS MAIN PAGE 
 def dashboard(request):
