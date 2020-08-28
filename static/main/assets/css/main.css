@@ -223,7 +223,7 @@ section:last-child,
 }
 
 .quote-list li p {
-	margin: 0 0 0 90px;
+	margin: 0 0 0 0px;
 	font-size: 1.2em;
 	font-style: italic;
 }
@@ -236,8 +236,9 @@ section:last-child,
 }
 
 .check-list li {
-	padding: 0.7em 0 0.7em 45px;
+	text-align: center;
 	font-size: 1.2em;
+	
 
 }
 
@@ -265,7 +266,7 @@ section:last-child,
 
 .bordered-feature-image {
 	display: block;
-	background: #fff url("images/bg04.png");
+	background: #fff url("images/bg04.jpg");
 	padding: 10px;
 	box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.15);
 	margin: 0 0 1.5em 0;
@@ -274,6 +275,13 @@ section:last-child,
 
 .bordered-feature-image img {
 	display: block;
+	height: 200px;
+	width: 100%;
+}
+
+#banner_image {
+	display: block;
+	height: 100%;
 	width: 100%;
 }
 
