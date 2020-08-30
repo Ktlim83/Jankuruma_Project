@@ -36,12 +36,22 @@
                     <a class="nav-link" href="/vroom/message_board/">Message Board</a>
                 </li>
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mapping System</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'map_dashboard'  %}">Map</a>
+                        <a class="dropdown-item" href="{% url 'junkyard'  %}">Junk Yards</a>
+                        
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Members Area</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'user_profile' user.id %}">My Profile</a>
-                        <a class="dropdown-item" href="{% url 'map_dashboard' %}">Junk Yard Map</a>
+                        <a class="dropdown-item" href="{% url 'research' %}">Research Chassis</a>
                         <a class="dropdown-item" href="#">Media(under construction)</a>
                         <a class="dropdown-item" href="#">Shop(under construction)</a>
                         <a class="dropdown-item" href="#">Extra(under construction)</a>
@@ -87,7 +97,7 @@
 
                     <!-- Feature #1 -->
                     <section>
-                        <a href="#" class="bordered-feature-image"><img src="/static/images/logos.png" /></a>
+                        <a href="{% url 'research' %}" class="bordered-feature-image"><img src="/static/images/logos.png" /></a>
                         <h2>Research Area </h2>
                         <p>Not sure where to begin? Then check out a few of these manufacturers and go from there.
                         </p>
@@ -97,7 +107,7 @@
 
                     <!-- Feature #2 -->
                     <section>
-                        <a href="#" class="bordered-feature-image"><img src="/static/images/carmeet.jpg" alt="" /></a>
+                        <a href="{% url 'message_board' %}" class="bordered-feature-image"><img src="/static/images/carmeet.jpg" alt="" /></a>
                         <h2>Message Boards</h2>
                         <p>What's going on at the moment? What is everyone up to? Stop by the message board and say "Hello!" Here is where you go to ask a question or simply talk to our other members.
                         </p>
@@ -120,7 +130,7 @@
 
                     <!-- Feature #4 -->
                     <section>
-                        <a href="#" class="bordered-feature-image"><img src="/static/images/parts.png" alt="" /></a>
+                        <a href="{% url 'map_dashboard' %}" class="bordered-feature-image"><img src="/static/images/parts.png" alt="" /></a>
                         <h2>Mapping System</h2>
                         <p>Where do I find parts for my car? Where are nay junk yards? Are there any meets coming up? Where are good paint shops? Where is a good place to have a car meet? Check out our mapping system for some suggestions.
                         </p>

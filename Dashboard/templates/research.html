@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>research</title>
+</head>
+<body>
+    {% for car in chassis %}
+    {{car.year}}
+    {{car.make}}
+    {{car.model}}
+    {{car.engine}}
+    {{car.hp}}
+    {{car.drivetrain}}
+    {{car.owner}}
+    {{car.car_pic.url}}
+    <img src="{{car.car_pic.url}}" alt="me" style="width:100%">
+    {% endfor %}
+
+
+
+    
+    
+</body>
+</html>

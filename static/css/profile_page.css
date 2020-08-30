@@ -77,4 +77,9 @@ body, html {
   .message_tag {
   margin-top: 10px;
 }
+
+.main_car{
+  height: auto;
+  width: 200px;
+}
   

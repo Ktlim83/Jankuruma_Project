@@ -79,9 +79,6 @@ class UserManager(models.Manager):
         if len(form_data['email']) < 1:
             errors['email'] = 'Email field is required.'
             
-        if len(form_data['car']) < 1:
-            errors['car'] = 'Car field is required.'
-            
         if len(form_data['bio']) < 1:
             errors['bio'] = 'Bio field is required.'
         
@@ -93,9 +90,29 @@ class UserManager(models.Manager):
         else:
             errors['picture'] = 'Picture field is required.'
             
-            
+        return errors
+    
+    
+    # CHASSIS VALIDATOR 
+    def chassis_validator(self, form_data, file_data):
+        errors = {}
+        if len(form_data['year']) < 1:
+            errors['year'] = 'Vehicle must have year.'
         
-            
+        if len(form_data['make']) < 1:
+            errors['make'] = 'Vehicle make is required.'
+
+        if len(form_data['model']) < 1:
+            errors['model'] = 'Vehicle model is required.'
+
+        # LOOKING FOR KEY VALUE STRING "PICTURE" IN FILE DATA
+        # IF THERE IS A PHOTO THEN NO ERROR MESSAGE
+
+        if "car_pic" in file_data:
+            print("there is a photo")
+        else:
+            errors['car_pic'] = 'Picture field is required.'
+              
         return errors
         
         
@@ -124,7 +141,10 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=255)
     profile_pic = models.CharField(max_length=255, null=True)
-    car = models.CharField(max_length=255, null=True)
+    car_pic = models.CharField(max_length=255, null=True)
+    year = models.CharField(max_length=255, null=True)
+    make = models.CharField(max_length=255, null=True)
+    model = models.CharField(max_length=255, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     

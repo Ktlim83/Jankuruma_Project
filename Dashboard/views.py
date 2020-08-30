@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect , HttpResponse
 from log_reg_app.models import *
+from Dashboard.models import *
 from map_system.models import *
 from .models import *
 import os
@@ -41,6 +42,18 @@ def dashboard(request):
             'contacts': ContactUser.objects.all(),
         }
         return render (request, 'main_page.html', context)
+    
+# LOADS RESEARCH PAGE 
+def research(request):
+    # if check checks if there is a user logged in, if not it redirects
+    if 'user_id' not in request.session:
+        return redirect ('/')
+    else:
+        context = {
+            'user': User.objects.get(id=request.session['user_id']),
+            'chassis': Chassis.objects.all(),
+        }
+        return render (request, 'research.html', context)
 
 # LOADS MESSAGE BOARD 
 def message_board(request):
@@ -82,6 +95,7 @@ def user_profile(request, id):
             'curr_user': User.objects.get(id=request.session['user_id']),
             'user': User.objects.get(id=id),
             'posts': Post.objects.all(),
+            'chassis': Chassis.objects.all(),
             "author_id" : id,
             "others" : User.objects.all()
         }
@@ -115,7 +129,19 @@ def delete_comment(request, id):
         destroyed = Comment.objects.get(id=id)
         destroyed.delete()
         return redirect('/vroom/message_board')
+    
+    
+# DELETES A CHASSIS 
+def delete_chassis(request, car_id):
+    if "user_id" not in request.session:
+        return redirect('/')
+    else:
+        user = User.objects.get(id=request.session['user_id'])
+        chassis = Chassis.objects.get(id=car_id)
+        user.owns.remove(chassis)
+        return redirect(f'/vroom/user_profile/{user.id}')
 
+    
 # LIKES A POST 
 def add_like(request, id):
     liked_message = Post.objects.get(id=id)
@@ -133,6 +159,8 @@ def contact(request):
     else:
         ContactUser.objects.create(name=request.POST['name'], email=request.POST['email'], message=request.POST['message'])
     return redirect('/vroom/about')
+
+
 # EDITS USER PROFILE 
 def edit_profile(request, id):
     # REMEMBER TO ADD ANOTHER PARAMETER FOR THE FILES DIRECTORY WITH POST
@@ -147,7 +175,6 @@ def edit_profile(request, id):
         curr_user.bio = request.POST['bio']
         curr_user.first_name = request.POST['first_name']
         curr_user.last_name = request.POST['last_name']
-        curr_user.car = request.POST['car']
         curr_user.email = request.POST['email']
         picture = request.FILES['picture']
         fs = FileSystemStorage()
@@ -161,5 +188,29 @@ def edit_profile(request, id):
         return redirect(f'/vroom/user_profile/{id}')
     
     
-   
+   # ADDS A CHASSIS
+def edit_chassis(request, id):
+    errors = User.objects.chassis_validator(request.POST,request.FILES)
+    if errors:
+        for field, value in errors.items():
+            messages.error(request, value, extra_tags='edit_not_approved')
+        return redirect(f'/vroom/user_profile/{id}')
+    else:
+        curr_user = User.objects.get(id=id)
+        curr_user.year = request.POST['year']
+        curr_user.make = request.POST['make']
+        curr_user.model = request.POST['model']
+        car_pic = request.FILES['car_pic']
+        fs = FileSystemStorage()
+        user_car_pic = fs.save(car_pic.name, car_pic)
+        url = fs.url(user_car_pic)
+        curr_user.car_pic = url
+        curr_user.save()
+        print('congrats something worked!')
+        messages.success(request, "You have successfully updated!", extra_tags='edit_approved')
+        return redirect(f'/vroom/user_profile/{id}')
+    
+    
+  
+
 

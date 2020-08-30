@@ -30,19 +30,32 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{%url 'about' %}">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/vroom/message_board/">Message Board</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mapping System</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'map_dashboard'  %}">Map</a>
+                        <a class="dropdown-item" href="{% url 'junkyard'  %}">Junk Yards</a>
+                        
+                    </div>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Members Area
-                    </a>
+                        Members Area</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'user_profile' user.id %}">My Profile</a>
+                        <a class="dropdown-item" href="{% url 'research' %}">Research Chassis</a>
                         <a class="dropdown-item" href="#">Media(under construction)</a>
                         <a class="dropdown-item" href="#">Shop(under construction)</a>
                         <a class="dropdown-item" href="#">Extra(under construction)</a>
                     </div>
                 </li>
-            </ul>
+        </div>
             <span id="user">Welcome {{ user.username }}! <a class="btn btn-outline-success" href="/logout">Log
                     out</a></span>
         </div>

@@ -1,4 +1,6 @@
 from django.db import models
+import os
+from django.conf import settings
 from log_reg_app.models import User
 
   
@@ -60,3 +62,18 @@ class ContactUser(models.Model):
         return f"{self.id} {self.name}"
     
 
+class Chassis(models.Model):
+    year = models.CharField(max_length=255, null=True)
+    make = models.CharField(max_length=255)
+    model = models.CharField(max_length=255)
+    engine = models.CharField(max_length=255)
+    drivetrain = models.CharField(max_length=255)
+    hp = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    car_pic = models.ImageField(upload_to='cars', null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    owner = models.ManyToManyField(User, related_name="owns")
+
+    def __str__(self):
+        return f"{self.id} {self.make} {self.model}"
