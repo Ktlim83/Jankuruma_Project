@@ -119,10 +119,10 @@
                                         {% endif  %}
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 class="mb-3"> Other chassis I own:</h5>
+                                        <h5 class="mb-3"> My Garage:</h5>
                                         {% for car in user.owns.all%}
                                         <ul>
-                                        <li><a href="{{car.car_pic.url}}">{{car.year}} {{car.id}} {{car.make}} {{car.model}}</a><a class="btn-sm btn-outline-danger" style="float: right;"
+                                        <li><a href="{{car.car_pic.url}}">{{car.year}} {{car.make}} {{car.model}}</a><a class="btn-sm btn-outline-danger" style="float: right;"
                                             href="/vroom/delete_chassis/{{ car.id }}"><i class="fa fa-trash"
                                                 aria-hidden="true"></i></a></li>
                                         </ul>
@@ -152,18 +152,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="messages">
+                            <div class="tab-pane table-wrapper-scroll-y my-custom-scrollbar " id="messages">
                                 <table class="table table-hover table-striped">
                                     <tbody>
                                         <tr>
                                             <ul style="list-style: none;">
-                                                <h6>Topic started:</h6>
                                                 {% for post in posts %}
                                                 {% if author_id == post.author.id %}
                                                 <li>
                                                     <p class="message_tag">
                                                         {{ post.content }}<a href="{% url 'message_page' post.id%}"><i
-                                                                class="fa fa-hand-o-right float-right"
+                                                                class="fa fa-envelope float-right"
                                                                 aria-hidden="true"></i></a></p>
                                                 </li>
                                                 {% else %}
@@ -274,12 +273,11 @@
                             </div>
 
                             <!-- OTHER MEMBERS AREA TAB  -->
-                            <div class=" tab-pane" id="other_members">
+                            <div class=" tab-pane table-wrapper-scroll-y my-custom-scrollbar" id="other_members">
                                 <table class="table table-hover table-striped">
                                     <tbody>
                                         <tr>
                                             <ul style="list-style: none;">
-                                                Visit:
                                                 {%for user in others%}
                                                 <li><a href="/vroom/user_profile/{{user.id}}">{{ user.username }}</a>
                                                 </li>

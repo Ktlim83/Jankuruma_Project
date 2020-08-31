@@ -1,12 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>research</title>
-</head>
-<body>
-    {% for car in chassis %}
+{% extends 'main_page.html' %}
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/research.css' %}">
+
+
+
+
+
+<div id="main">
+    <header>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="/static/video/jankurumaSample.mp4" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                </div>
+            </div>
+        </div>
+    </header>
+    <h1 class="mt-4">Select a manufacturer below:</h1>
+    <div class="col">
+        <div class="row">
+            <div class="container mt-2">
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img
+                                src="/static/images/logos/Lexus-logo.png">
+                            <h3>Design</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img
+                                src="/static/images/logos/Mazda-logo.png">
+                            <h3>Code</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img
+                                src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
+                            <h3>Launch</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container mt-2">
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img
+                                src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
+                            <h3>Design</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img
+                                src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
+                            <h3>Code</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img
+                                src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
+                            <h3>Launch</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis provident at.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% for car in chassis %}
     {{car.year}}
     {{car.make}}
     {{car.model}}
@@ -16,11 +156,10 @@
     {{car.owner}}
     {{car.car_pic.url}}
     <img src="{{car.car_pic.url}}" alt="me" style="width:100%">
-    {% endfor %}
+    {% endfor %} -->
 
 
 
-    
-    
-</body>
-</html>
+
+
+{% endblock %}

@@ -27,3 +27,12 @@ a {
 	color: rgb(22, 102, 53);
 }
 
+.my-custom-scrollbar {
+	position: relative;
+	height: 400px;
+	overflow: auto;
+  }
+  
+  .table-wrapper-scroll-y {
+	display: block;
+  }

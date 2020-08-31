@@ -36,13 +36,13 @@
                     <a class="nav-link" href="/vroom/message_board/">Message Board</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Mapping System</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'map_dashboard'  %}">Map</a>
                         <a class="dropdown-item" href="{% url 'junkyard'  %}">Junk Yards</a>
-                        
+
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -81,7 +81,8 @@
                 <div class="col-6 col-12-medium imp-medium">
 
                     <!-- Banner Image -->
-                    <a href="#" class="bordered-feature-image"><img id="banner_image" src="/static/images/mr2s.jpg" alt="" /></a>
+                    <a href="#" class="bordered-feature-image"><img id="banner_image" src="/static/images/mr2s.jpg"
+                            alt="" /></a>
 
                 </div>
             </div>
@@ -97,7 +98,8 @@
 
                     <!-- Feature #1 -->
                     <section>
-                        <a href="{% url 'research' %}" class="bordered-feature-image"><img src="/static/images/logos.png" /></a>
+                        <a href="{% url 'research' %}" class="bordered-feature-image"><img
+                                src="/static/images/logos.png" /></a>
                         <h2>Research Area </h2>
                         <p>Not sure where to begin? Then check out a few of these manufacturers and go from there.
                         </p>
@@ -107,9 +109,11 @@
 
                     <!-- Feature #2 -->
                     <section>
-                        <a href="{% url 'message_board' %}" class="bordered-feature-image"><img src="/static/images/carmeet.jpg" alt="" /></a>
+                        <a href="{% url 'message_board' %}" class="bordered-feature-image"><img
+                                src="/static/images/carmeet.jpg" alt="" /></a>
                         <h2>Message Boards</h2>
-                        <p>What's going on at the moment? What is everyone up to? Stop by the message board and say "Hello!" Here is where you go to ask a question or simply talk to our other members.
+                        <p>What's going on at the moment? What is everyone up to? Stop by the message board and say
+                            "Hello!" Here is where you go to ask a question or simply talk to our other members.
                         </p>
                     </section>
 
@@ -118,10 +122,12 @@
 
                     <!-- Feature #3 -->
                     <section>
-                        <a href="#" class="bordered-feature-image"><img src="/static/images/oilchange.jpeg" alt="" /></a>
+                        <a href="#" class="bordered-feature-image"><img src="/static/images/oilchange.jpeg"
+                                alt="" /></a>
                         <h2>Tutorials and DIY's</h2>
                         <p>
-                            How do I change my oil? How do I check my battery? Questions like those can be answered here. Learn by doing, with a little help from the information that could be found here.
+                            How do I change my oil? How do I check my battery? Questions like those can be answered
+                            here. Learn by doing, with a little help from the information that could be found here.
                         </p>
                     </section>
 
@@ -130,9 +136,12 @@
 
                     <!-- Feature #4 -->
                     <section>
-                        <a href="{% url 'map_dashboard' %}" class="bordered-feature-image"><img src="/static/images/parts.png" alt="" /></a>
+                        <a href="{% url 'map_dashboard' %}" class="bordered-feature-image"><img
+                                src="/static/images/parts.png" alt="" /></a>
                         <h2>Mapping System</h2>
-                        <p>Where do I find parts for my car? Where are nay junk yards? Are there any meets coming up? Where are good paint shops? Where is a good place to have a car meet? Check out our mapping system for some suggestions.
+                        <p>Where do I find parts for my car? Where are nay junk yards? Are there any meets coming up?
+                            Where are good paint shops? Where is a good place to have a car meet? Check out our mapping
+                            system for some suggestions.
                         </p>
                     </section>
 
@@ -182,7 +191,7 @@
                             <li>Euro</li>
                             <li>OEM+</li>
                             <li>Muscle</li>
-                            
+
                         </ul>
                     </section>
 
@@ -270,7 +279,7 @@
     </div>
 
     <!-- Scripts -->
-  
+    <script src="{% static '/js/research.js' %}"></script>   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -280,10 +289,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
-     <script defer
-    src="https://maps.googleapis.com/maps/api/js?key={{map_api}}&callback=initMap">
+    <script defer src="https://maps.googleapis.com/maps/api/js?key={{map_api}}&callback=initMap">
     </script>
-     
+    
+
 
 </body>
 

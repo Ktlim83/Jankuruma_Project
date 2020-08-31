@@ -34,13 +34,13 @@
                     <a class="nav-link" href="/vroom/message_board/">Message Board</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Mapping System</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{% url 'map_dashboard'  %}">Map</a>
                         <a class="dropdown-item" href="{% url 'junkyard'  %}">Junk Yards</a>
-                        
+
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -56,22 +56,23 @@
                     </div>
                 </li>
         </div>
-            <span id="user">Welcome {{ user.username }}! <a class="btn btn-outline-success" href="/logout">Log
-                    out</a></span>
+        <span id="user">Welcome {{ user.username }}! <a class="btn btn-outline-success" href="/logout">Log
+                out</a></span>
         </div>
     </nav>
     <!-- HEAD  -->
-    
-</div>
+
+    </div>
     <!-- breadcrumb  -->
     <div class="container-fluid mt-5">
-        
+
         <!-- end of breadcrumb  -->
         <!-- category  -->
         <div class="row">
             <div class="col-12 col-xl-9">
                 <h2 class="h4 category mb-0 p-4 rounded-top text-light">Message Board</h2>
-                <table class="table table-secondary table-bordered table-responsive">
+                <table
+                    class="table table-secondary table-bordered table-responsive table-wrapper-scroll-y my-custom-scrollbar">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col" class="forum-col">Topic</th>
@@ -101,7 +102,8 @@
                                 <h4 class="h6 mb-0">{{ post.created_at }}</h4>
                                 <div>by:<a href="/vroom/user_profile/{{post.author.id}}">{{ post.author.username }}</a>
                                 </div>
-                                <div><a href="/vroom/like/{{post.id}}"><i class="fa fa-thumbs-o-up"></i><small> Like it</small></a></div>
+                                <div><a href="/vroom/like/{{post.id}}"><i class="fa fa-thumbs-o-up"></i><small> Like
+                                            it</small></a></div>
                             </td>
                         </tr>
                         {% endfor %}
@@ -139,7 +141,7 @@
                                 </dl>
                                 <dl class="row mb-0">
                                     <dt class="col-8">Members:</dt>
-                                  
+
                                     <dd class="col-4 mb-0">{{others.count}}</dd>
                                 </dl>
                             </div>
@@ -160,7 +162,31 @@
     </div>
     </div>
     <!-- end of category  -->
+
+
+
+
+
+
+
+    
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
 </script>
