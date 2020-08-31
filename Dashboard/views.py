@@ -51,7 +51,12 @@ def research(request):
     else:
         context = {
             'user': User.objects.get(id=request.session['user_id']),
-            'chassis': Chassis.objects.all(),
+            'toyota_chassis': Chassis.objects.filter(make__contains="toyota"),
+            'nissan_chassis': Chassis.objects.filter(make__contains="nissan"),
+            'mazda_chassis': Chassis.objects.filter(make__contains="mazda"),
+            'honda_chassis': Chassis.objects.filter(make__contains="honda"),
+            'mitsubishi_chassis': Chassis.objects.filter(make__contains="mitsubishi"),
+            'subaru_chassis': Chassis.objects.filter(make__contains="subaru")
         }
         return render (request, 'research.html', context)
 

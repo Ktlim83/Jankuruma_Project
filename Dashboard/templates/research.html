@@ -30,15 +30,16 @@
                     <div class="face face1">
                         <div class="content">
                             <img
-                                src="/static/images/logos/Lexus-logo.png">
-                            <h3>Design</h3>
+                                src="/static/images/logos/Mitsubishi-logo.png">
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.</p>
-                            <a href="#">Read More</a>
+                            <h4>Models:</h4>
+                            {% for car in mitsubishi_chassis %}
+                            <p>{{car.model}}</p>
+                            {% endfor %}
+                            <a href="https://en.wikipedia.org/wiki/mitsubishi" target="_blank">History</a>
                         </div>
                     </div>
                 </div>
@@ -47,14 +48,15 @@
                         <div class="content">
                             <img
                                 src="/static/images/logos/Mazda-logo.png">
-                            <h3>Code</h3>
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.</p>
-                            <a href="#">Read More</a>
+                            <h4>Models:</h4>
+                            {% for car in mazda_chassis %}
+                            <p>{{car.model}}</p>
+                            {% endfor %}
+                            <a href="https://en.wikipedia.org/wiki/mazda" target="_blank">History</a>
                         </div>
                     </div>
                 </div>
@@ -62,15 +64,17 @@
                     <div class="face face1">
                         <div class="content">
                             <img
-                                src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                            <h3>Launch</h3>
+                                src="/static/images/logos/Nissan-text-logo.png">
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.</p>
-                            <a href="#">Read More</a>
+                            <h4>Models:</h4>
+                            {% for car in nissan_chassis %}
+                            <p>{{car.model}}</p>
+                            {% endfor %}
+
+                            <a href="https://en.wikipedia.org/wiki/nissan" target="_blank">History</a>
                         </div>
                     </div>
                 </div>
@@ -82,15 +86,16 @@
                     <div class="face face1">
                         <div class="content">
                             <img
-                                src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
-                            <h3>Design</h3>
+                                src="/static/images/logos/Subaru-logo-2001.png">
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.</p>
-                            <a href="#">Read More</a>
+                            <h4>Models:</h4>
+                            {% for car in subaru_chassis %}
+                            <p>{{car.model}}</p>
+                            {% endfor %}
+                            <a href="https://en.wikipedia.org/wiki/subaru" target="_blank">History</a>
                         </div>
                     </div>
                 </div>
@@ -98,15 +103,16 @@
                     <div class="face face1">
                         <div class="content">
                             <img
-                                src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
-                            <h3>Code</h3>
+                                src="/static/images/logos/toyota-logo.png">
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.</p>
-                            <a href="#">Read More</a>
+                            <h4>Models:</h4>
+                            {% for car in toyota_chassis %}
+                            <p>{{car.model}}</p>
+                            {% endfor %}
+                            <a href="https://en.wikipedia.org/wiki/toyota" target="_blank">History</a>
                         </div>
                     </div>
                 </div>
@@ -114,15 +120,16 @@
                     <div class="face face1">
                         <div class="content">
                             <img
-                                src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                            <h3>Launch</h3>
+                                src="/static/images/logos/honda-logo.png">
                         </div>
                     </div>
                     <div class="face face2">
                         <div class="content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
-                                veritatis provident at.</p>
-                            <a href="#">Read More</a>
+                            <h4>Models:</h4>
+                            {% for car in honda_chassis %}
+                            <p>{{car.model}}</p>
+                            {% endfor %}
+                            <a href="https://en.wikipedia.org/wiki/Honda" target="_blank">History</a>
                         </div>
                     </div>
                 </div>

@@ -86,7 +86,7 @@ header .overlay {
 }
 
 .container .card:hover .face.face1{
-    background: #ff0057;
+    background: #28b858;
     transform: translateY(0);
 }
 

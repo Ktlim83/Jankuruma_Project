@@ -73,7 +73,7 @@ class Chassis(models.Model):
     car_pic = models.ImageField(upload_to='cars', null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    owner = models.ManyToManyField(User, related_name="owns")
+    owner = models.ManyToManyField(User, related_name="owns", blank=True)
 
     def __str__(self):
         return f"{self.id} {self.make} {self.model}"
