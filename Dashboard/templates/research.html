@@ -5,10 +5,6 @@
 {% load static %}
 <link rel="stylesheet" href="{% static '/css/research.css' %}">
 
-
-
-
-
 <div id="main">
     <header>
         <div class="overlay"></div>
@@ -37,7 +33,7 @@
                         <div class="content">
                             <h4>Models:</h4>
                             {% for car in mitsubishi_chassis %}
-                            <p>{{car.model}}</p>
+                            <p><a href="/vroom/chassis_page/{{ car.id }}">{{car.model}}</a></p>
                             {% endfor %}
                             <a href="https://en.wikipedia.org/wiki/mitsubishi" target="_blank">History</a>
                         </div>
@@ -54,7 +50,7 @@
                         <div class="content">
                             <h4>Models:</h4>
                             {% for car in mazda_chassis %}
-                            <p>{{car.model}}</p>
+                            <p><a href="/vroom/chassis_page/{{ car.id }}">{{car.model}}</a></p>
                             {% endfor %}
                             <a href="https://en.wikipedia.org/wiki/mazda" target="_blank">History</a>
                         </div>
@@ -71,9 +67,8 @@
                         <div class="content">
                             <h4>Models:</h4>
                             {% for car in nissan_chassis %}
-                            <p>{{car.model}}</p>
+                            <p><a href="/vroom/chassis_page/{{ car.id }}">{{car.model}}</a></p>
                             {% endfor %}
-
                             <a href="https://en.wikipedia.org/wiki/nissan" target="_blank">History</a>
                         </div>
                     </div>
@@ -93,7 +88,7 @@
                         <div class="content">
                             <h4>Models:</h4>
                             {% for car in subaru_chassis %}
-                            <p>{{car.model}}</p>
+                            <p><a href="/vroom/chassis_page/{{ car.id }}">{{car.model}}</a></p>
                             {% endfor %}
                             <a href="https://en.wikipedia.org/wiki/subaru" target="_blank">History</a>
                         </div>
@@ -110,7 +105,7 @@
                         <div class="content">
                             <h4>Models:</h4>
                             {% for car in toyota_chassis %}
-                            <p>{{car.model}}</p>
+                            <p><a href="/vroom/chassis_page/{{ car.id }}">{{car.model}}</a></p>
                             {% endfor %}
                             <a href="https://en.wikipedia.org/wiki/toyota" target="_blank">History</a>
                         </div>
@@ -127,7 +122,7 @@
                         <div class="content">
                             <h4>Models:</h4>
                             {% for car in honda_chassis %}
-                            <p>{{car.model}}</p>
+                            <p><a href="/vroom/chassis_page/{{ car.id }}">{{car.model}}</a></p>
                             {% endfor %}
                             <a href="https://en.wikipedia.org/wiki/Honda" target="_blank">History</a>
                         </div>
@@ -137,36 +132,4 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- {% for car in chassis %}
-    {{car.year}}
-    {{car.make}}
-    {{car.model}}
-    {{car.engine}}
-    {{car.hp}}
-    {{car.drivetrain}}
-    {{car.owner}}
-    {{car.car_pic.url}}
-    <img src="{{car.car_pic.url}}" alt="me" style="width:100%">
-    {% endfor %} -->
-
-
-
-
-
 {% endblock %}

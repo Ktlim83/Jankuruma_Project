@@ -59,6 +59,20 @@ def research(request):
             'subaru_chassis': Chassis.objects.filter(make__contains="subaru")
         }
         return render (request, 'research.html', context)
+    
+# LOADS CHASSIS PAGE 
+def chassis_page(request, car_id):
+    # if check checks if there is a user logged in, if not it redirects
+    if 'user_id' not in request.session:
+        return redirect ('/')
+    else:
+        context = {
+            'user': User.objects.get(id=request.session['user_id']),
+            "chassis" : Chassis.objects.get(id=car_id),
+            'all_chassis': Chassis.objects.all(),
+        }
+        
+        return render (request, 'chassis_page.html', context)
 
 # LOADS MESSAGE BOARD 
 def message_board(request):
@@ -214,6 +228,16 @@ def edit_chassis(request, id):
         print('congrats something worked!')
         messages.success(request, "You have successfully updated!", extra_tags='edit_approved')
         return redirect(f'/vroom/user_profile/{id}')
+    
+    
+    # ADDS CHASSIS TO USER/GARAGE
+def add_chassis(request, car_id):
+        chassis = Chassis.objects.get(id=car_id)
+        user = User.objects.get(id=request.session["user_id"])
+        user.owns.add(chassis)
+        messages.success(request, "Chassis was added to your garage!", extra_tags='chassis_added')
+        
+        return redirect(f'/vroom/chassis_page/{car_id}')
     
     
   
