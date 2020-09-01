@@ -36,14 +36,29 @@
                     <div class="tab-content py-4">
                         <div class="tab-pane active" id="Chassis">
                             <div class="row">
-
-                                <div class="col-md-6">
-                                    <div>Year:{{chassis.year}}</div>
-                                    <div>Make: {{chassis.make}}</div>
-                                    <div>Model: {{chassis.model}}</div>
-                                    <div>Engine:{{chassis.engine}}</div>
-                                    <div>HP: {{chassis.hp}}</div>
-                                    <div>Drivetrain: {{chassis.drivetrain}}</div>
+                                <div class="col-md-12">
+                                <table class="table table-sm table-hover table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Year</th>
+                                        <th scope="col">Make</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Engine</th>
+                                        <th scope="col">Horsepower</th>
+                                        <th scope="col">Drivetrain</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">{{chassis.year}}</th>
+                                        <td>{{chassis.make}}</td>
+                                        <td>{{chassis.model}}</td>
+                                        <td>{{chassis.engine}}</td>
+                                        <td>{{chassis.hp}}</td>
+                                        <td>{{chassis.drivetrain}}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
                                 </div>
                                 <div class="col-md-12">
                                     <h5 class="mt-2"> Details:

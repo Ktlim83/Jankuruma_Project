@@ -139,7 +139,7 @@ header .overlay {
     font-weight: 900;
     color: #333;
     padding: 5px;
-    border: 1px solid #333;
+    /* border: 1px solid #333; */
 }
 
 .container .card .face.face2 .content a:hover{
